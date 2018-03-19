@@ -344,19 +344,19 @@
       
         
           
-            <h3 id="一-搭建GitHub-Pages"><a href="#一-搭建GitHub-Pages" class="headerlink" title="一.搭建GitHub Pages"></a>一.搭建GitHub Pages</h3><p>Github Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客<br>登录github,新建一个仓库，名称必须是：你的github名称.github.io</p>
-<h3 id="二-Hexo"><a href="#二-Hexo" class="headerlink" title="二.Hexo"></a>二.Hexo</h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>hexo环境依赖：git、Node.js</p>
-<h5 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1.安装git"></a>1.安装git</h5><ul>
+            <h3 id="搭建GitHub-Pages"><a href="#搭建GitHub-Pages" class="headerlink" title="搭建GitHub Pages"></a>搭建GitHub Pages</h3><p>Github Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客<br>登录github,新建一个仓库，名称必须是：你的github名称.github.io</p>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>hexo环境依赖：git、Node.js</p>
+<h5 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h5><ul>
 <li>Windows：下载并安装 git.</li>
 <li>Mac：使用 Homebrew：brew install git</li>
 </ul>
-<h5 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装Node.js</h5><p>1）先安装nvm(Node Version Manager):之所以需要这个工具，是因为 Node.js 的各种特性都没有稳定下来，所以我们经常由于老项目或尝新的原因，需要切换各种版本。</p>
+<h5 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h5><p>1）先安装nvm(Node Version Manager):之所以需要这个工具，是因为 Node.js 的各种特性都没有稳定下来，所以我们经常由于老项目或尝新的原因，需要切换各种版本。</p>
 <p><code>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.2/install.sh | bash</code><br>2）6.9是我选择的版本 ,安装好之后可以用npm安装cnpm和nrm，使用淘宝镜像，因为默认的镜像是国外的，访问速度慢。安装完成之后，我们可以用cnpm代替npm安装其他东西</p>
 <blockquote>
 <p>cnpm支持npm除了publish之外的所有命令，所以说你可以放心的使用cnpm来代替npm使用，这样可能使用包管理的时候更加的方便，因为服务器就在国内。但是，有时候如果你的网络情况比较渣的话，用啥都一样。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install 6.9</span><br><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h5 id="3-配置Hexo"><a href="#3-配置Hexo" class="headerlink" title="3.配置Hexo"></a>3.配置Hexo</h5><p>安装：<code>npm install hexo-cli -g</code></p>
+<h5 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h5><p>安装：<code>npm install hexo-cli -g</code></p>
 <p>查看是否成功，成功后显示hexo版本：<code>hexo v</code></p>
 <p>新建一个目录，存放你的博客。（我建的文件夹是blog）</p>
 <p>进入blog目录(注意：以下步骤都是在blog目录下完成的)：</p>
@@ -377,7 +377,7 @@
 <p>分别输入以下三条命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <p>部署完成</p>
-<h3 id="三-hexo主题"><a href="#三-hexo主题" class="headerlink" title="三.hexo主题"></a>三.hexo主题</h3><p>hexo提供了多款主题，我自己比较喜欢的是next主题<br>进入blog文件夹（自己选择存放博客的文件夹）：<br><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code><br>下载完成后，在blog/themes下出现一个next文件夹，这就是你的next主题<br>在blog目录下，更改站点配置文件_config.yml</p>
+<h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>hexo提供了多款主题，我自己比较喜欢的是next主题<br>进入blog文件夹（自己选择存放博客的文件夹）：<br><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code><br>下载完成后，在blog/themes下出现一个next文件夹，这就是你的next主题<br>在blog目录下，更改站点配置文件_config.yml</p>
 <blockquote>
 <p>#Extensions<br>##Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a><br>##Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>#theme: landscape<br>theme: next</p>
 </blockquote>

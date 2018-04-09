@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/19/GitHub-Pages-Hexo-搭建个人网站/index.html">
 <meta property="og:site_name" content="Yaya&#39;s blog">
 <meta property="og:description" content="搭建GitHub PagesGithub Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客登录github,新建一个仓库，名称必须是：你的github名称.github.io HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓">
-<meta property="og:updated_time" content="2018-04-09T05:08:09.000Z">
+<meta property="og:updated_time" content="2018-04-09T05:39:42.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Pages+Hexo 搭建个人网站">
 <meta name="twitter:description" content="搭建GitHub PagesGithub Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客登录github,新建一个仓库，名称必须是：你的github名称.github.io HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓">
@@ -185,7 +185,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -205,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -215,7 +215,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -279,7 +279,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-19T15:53:55+08:00">
                 2018-03-19
@@ -300,7 +300,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -347,16 +347,20 @@
 <li>Windows：下载并安装 git.</li>
 <li>Mac：使用 Homebrew：brew install git<br>安装完成之后配置git与你的github的SSH连接</li>
 </ul>
-<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>1）先安装nvm(Node Version Manager):之所以需要这个工具，是因为 Node.js 的各种特性都没有稳定下来，所以我们经常由于老项目或尝新的原因，需要切换各种版本。<br><figure class="highlight plain"><figcaption><span>curl -o-</span><a href="https://raw.githubusercontent.com/creationix/nvm/v0.25.2/install.sh" target="_blank" rel="noopener">| bash ```  </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2）6.9是我选择的版本 ,安装好之后可以用npm安装cnpm和nrm，使用淘宝镜像，因为默认的镜像是国外的，访问速度慢。安装完成之后，我们可以用cnpm代替npm安装其他东西</span><br><span class="line"></span><br><span class="line">&gt; cnpm支持npm除了publish之外的所有命令，所以说你可以放心的使用cnpm来代替npm使用，这样可能使用包管理的时候更加的方便，因为服务器就在国内。但是，有时候如果你的网络情况比较渣的话，用啥都一样。</span><br></pre></td></tr></table></figure></p>
-<p>`$ nvm install 6.9<br>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`#### 配置Hexo</span><br><span class="line">安装：  </span><br><span class="line"></span><br><span class="line">``` npm install hexo-cli -g ``` </span><br><span class="line"> </span><br><span class="line">查看是否成功，成功后显示hexo版本  </span><br><span class="line"></span><br><span class="line">``` hexo v ```  </span><br><span class="line"></span><br><span class="line">新建一个目录，存放你的博客。（我建的文件夹是blog）  </span><br><span class="line">进入blog目录(注意：以下步骤都是在blog目录下完成的)：</span><br></pre></td></tr></table></figure></p>
+<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>1）先安装nvm(Node Version Manager):之所以需要这个工具，是因为 Node.js 的各种特性都没有稳定下来，所以我们经常由于老项目或尝新的原因，需要切换各种版本。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">`$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.2/install.sh | bash </span><br><span class="line">`</span><br><span class="line">`  </span><br><span class="line">2）6.9是我选择的版本 ,安装好之后可以用npm安装cnpm和nrm，使用淘宝镜像，因为默认的镜像是国外的，访问速度慢。安装完成之后，我们可以用cnpm代替npm安装其他东西</span><br><span class="line"></span><br><span class="line">&gt; cnpm支持npm除了publish之外的所有命令，所以说你可以放心的使用cnpm来代替npm使用，这样可能使用包管理的时候更加的方便，因为服务器就在国内。但是，有时候如果你的网络情况比较渣的话，用啥都一样。</span><br></pre></td></tr></table></figure>
+<p>`$ nvm install 6.9<br>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">`</span><br><span class="line">#### 配置Hexo</span><br><span class="line">安装：  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">`npm install hexo-cli -g </span><br><span class="line">` </span><br><span class="line">` </span><br><span class="line">查看是否成功，成功后显示hexo版本  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">`hexo v</span><br><span class="line">`  </span><br><span class="line">`</span><br><span class="line">新建一个目录，存放你的博客。（我建的文件夹是blog）  </span><br><span class="line">进入blog目录(注意：以下步骤都是在blog目录下完成的)：</span><br></pre></td></tr></table></figure></p>
 <p>`$ hexo init<br>$ cnpm install<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`安装完成之后，体验hexo</span><br></pre></td></tr></table></figure></p>
-<p>`$ hexo g # 生成<br>$ hexo s # 启动服务预览（生成在本地）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">`</span><br><span class="line">打开本地地址：localhost:4000</span><br><span class="line">#### 部署Hexo到Github Pages：</span><br><span class="line">- 前提：将本地git连接到github上配置好</span><br><span class="line">- 在Github上创建的仓库（github名称.github.io），可以通过地址http://github名称.github.io直接访问，访问的文件就是其中的html静态文件，</span><br><span class="line">- 每次将写好的文章用hexo生成，然后用git提交到github上</span><br><span class="line">进入blog目录，打开博客站点的配置文件\_config.yml，在文件末尾修改：</span><br><span class="line"></span><br><span class="line">&gt; deploy:</span><br><span class="line">&gt; 　type: git</span><br><span class="line">&gt; 　repo: git@github.com:yashuning/yashuning.github.io.git</span><br><span class="line">&gt; 　branch: master</span><br><span class="line"></span><br><span class="line">注意，这种配置文件格式要求比较严格:</span><br><span class="line">如果文件末尾已经有deploy、type等字段，删去，改为以上的内容;</span><br><span class="line">type、repo、branch三个变量之前空两格，变量后的：之后空一格</span><br><span class="line"></span><br><span class="line">安装git部署插件：  </span><br><span class="line">``` $ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>分别输入以下三条命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>`部署完成</p>
-<h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>hexo提供了多款主题，我自己比较喜欢的是next主题<br>进入blog文件夹（自己选择存放博客的文件夹）：</p>
-<p><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code>  </p>
-<p>下载完成后，在blog/themes下出现一个next文件夹，这就是你的next主题<br>在blog目录下，更改站点配置文件_config.yml</p>
+<p>`$ hexo g # 生成<br>$ hexo s # 启动服务预览（生成在本地）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">`</span><br><span class="line">打开本地地址：localhost:4000</span><br><span class="line">#### 部署Hexo到Github Pages：</span><br><span class="line">- 前提：将本地git连接到github上配置好</span><br><span class="line">- 在Github上创建的仓库（github名称.github.io），可以通过地址http://github名称.github.io直接访问，访问的文件就是其中的html静态文件，</span><br><span class="line">- 每次将写好的文章用hexo生成，然后用git提交到github上</span><br><span class="line">进入blog目录，打开博客站点的配置文件\_config.yml，在文件末尾修改：</span><br><span class="line"></span><br><span class="line">&gt; deploy:</span><br><span class="line">&gt; 　type: git</span><br><span class="line">&gt; 　repo: git@github.com:yashuning/yashuning.github.io.git</span><br><span class="line">&gt; 　branch: master</span><br><span class="line"></span><br><span class="line">注意，这种配置文件格式要求比较严格:</span><br><span class="line">如果文件末尾已经有deploy、type等字段，删去，改为以上的内容;</span><br><span class="line">type、repo、branch三个变量之前空两格，变量后的：之后空一格</span><br><span class="line"></span><br><span class="line">安装git部署插件：  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">`$ npm install hexo-deployer-git --save </span><br><span class="line">`</span><br><span class="line">`</span><br><span class="line">分别输入以下三条命令：</span><br></pre></td></tr></table></figure></p>
+<p>`$ hexo clean<br>$ hexo g<br>$ hexo d</p>
+<pre><code>`部署完成
+
+### hexo主题
+
+hexo提供了多款主题，我自己比较喜欢的是next主题
+进入blog文件夹（自己选择存放博客的文件夹）：
+
+</code></pre><p><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code><br>`<br>下载完成后，在blog/themes下出现一个next文件夹，这就是你的next主题<br>在blog目录下，更改站点配置文件_config.yml</p>
 <blockquote>
 <p>#Extensions<br>##Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a><br>##Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>#theme: landscape<br>theme: next</p>
 </blockquote>
@@ -459,10 +463,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -483,7 +487,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -494,7 +498,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">categories</span>
+                  <span class="site-state-item-name">Kategorien</span>
                 </a>
               </div>
             
@@ -505,7 +509,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">Tags</span>
                 </a>
               </div>
             
@@ -537,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建GitHub-Pages"><span class="nav-number">1.</span> <span class="nav-text">搭建GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">2.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">安装Node.js</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo主题"><span class="nav-number">3.</span> <span class="nav-text">hexo主题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建GitHub-Pages"><span class="nav-number">1.</span> <span class="nav-text">搭建GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">2.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">安装Node.js</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -567,7 +571,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

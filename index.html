@@ -251,178 +251,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/09/打开MacOS-High-Sierra原生的读写NTFS功能/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yashuning">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yaya's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/09/打开MacOS-High-Sierra原生的读写NTFS功能/" itemprop="url">打开MacOS High Sierra原生的读写NTFS功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T11:14:07+08:00">
-                2018-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>mac下不能直接写入的NTFS格式的磁盘，只支持读，一般我们想要写入数据到移动硬盘，要借助专业的NTFS工具，大多数人使用的是Paragon NTFS for MAC，但是这个工具是收费的，破解版都不能使用，而且有人说这个工具有可能会丢失数据<br>如果你想要节省时间愿意为他付费，可以使用Paragon NTFS for MAC来读写，我试用过，但是感觉不太符合我的习惯<br>有人说这个ntfs限制原先是没有的，  </p>
-<blockquote>
-<p>其实最早在OSX 10.5的时候，OSX其实原生就支持直接写入NTFS的盘的，后来由于微软的限制，把这个功能给屏蔽了，我们可以通过命令行手动打开这个选项。  </p>
-</blockquote>
-<p>网上很多大神分享的方法是通过终端使用命令打开，试过之后发现真的可以<br>执行以下过程之前必须插入你的NTFS驱动器。</p>
-<h3 id="确定你的驱动器名称"><a href="#确定你的驱动器名称" class="headerlink" title="确定你的驱动器名称"></a>确定你的驱动器名称</h3><p>方式一：在Finder中查看你的驱动器名称<br><img src="" alt="Finder查看驱动器名称">(/打开MacOS-High-Sierra原生的读写NTFS功能/Finder_name.png)<br>方式二：使用命令行：</p>
-<pre><code>`diskutil list 
-`  
-`
-![命令行查看驱动器名称]()(/打开MacOS-High-Sierra原生的读写NTFS功能/volume_name.png)  
-我的名称是nys  
-注意：驱动器名称最好不要有空格  
-### 使用命令打开NTFS读写权限  
-启动终端，执行如下命令行：  
-
-</code></pre><p><code>sudo vim /etc/fstab</code><br>`<br>在文件中写入以下内容，注意：内容中的NAME是你的磁盘驱动名称： </p>
-<pre><code>`LABEL=NAME none ntfs rw,auto,nobrowse 
-` 
-` 
-保存，执行完成之后，你就会发现现在已经可以向磁盘中写入数据了！  
-### 驱动器位置  
-在你推出了你的驱动器，再次插上之后会发现Finder左侧栏中不会出现你的驱动器了  
-有的人是推出再插上驱动器之后不再出现，有的是要关机重启之后才不再出现。  
-你需要找到你的驱动器,你的驱动器是挂在/Volumes上的：  
-- 在Finder-\&gt;前往 选择：前往文件夹，输入 ：/Volumes  
-![驱动器位置]()(/打开MacOS-High-Sierra原生的读写NTFS功能/驱动器位置.png) 
-{% asset_img  驱动器位置.png_%} 
-- 每次都要前往文件夹很麻烦，可以将这个文件夹固定在桌面中：输入如下命令(注意，volume_name是你的驱动器名称)：  
-
-</code></pre><p><code>sudo ln -s /Volumes/volume_name /Desktop/volume_name</code><br>`</p>
-<h3 id="关于没有成功的情况"><a href="#关于没有成功的情况" class="headerlink" title="关于没有成功的情况"></a>关于没有成功的情况</h3><p>检查你的驱动器名称中是否有空格，如果有，使用“\040”进行转义<br>以上内容是我参考的以下两篇文章：<br>\<a href="https://bbs.feng.com/read-htm-tid-9932031.html\" target="_blank" rel="noopener">https://bbs.feng.com/read-htm-tid-9932031.html\</a><br>\<a href="http://macdrug.com/write-ntfs-drive-macos-sierra/\" target="_blank" rel="noopener">http://macdrug.com/write-ntfs-drive-macos-sierra/\</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/19/GitHub-Pages-Hexo-搭建个人网站/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -523,19 +351,17 @@
 <li>Mac：使用 Homebrew：brew install git<br>安装完成之后配置git与你的github的SSH连接</li>
 </ul>
 <h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>1）先安装nvm(Node Version Manager):之所以需要这个工具，是因为 Node.js 的各种特性都没有稳定下来，所以我们经常由于老项目或尝新的原因，需要切换各种版本。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">`$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.2/install.sh | bash </span><br><span class="line">`</span><br><span class="line">`  </span><br><span class="line">2）6.9是我选择的版本 ,安装好之后可以用npm安装cnpm和nrm，使用淘宝镜像，因为默认的镜像是国外的，访问速度慢。安装完成之后，我们可以用cnpm代替npm安装其他东西</span><br><span class="line"></span><br><span class="line">&gt; cnpm支持npm除了publish之外的所有命令，所以说你可以放心的使用cnpm来代替npm使用，这样可能使用包管理的时候更加的方便，因为服务器就在国内。但是，有时候如果你的网络情况比较渣的话，用啥都一样。</span><br></pre></td></tr></table></figure>
-<p>`$ nvm install 6.9<br>$ npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">`</span><br><span class="line">#### 配置Hexo</span><br><span class="line">安装：  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">`npm install hexo-cli -g </span><br><span class="line">` </span><br><span class="line">` </span><br><span class="line">查看是否成功，成功后显示hexo版本  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">`hexo v</span><br><span class="line">`  </span><br><span class="line">`</span><br><span class="line">新建一个目录，存放你的博客。（我建的文件夹是blog）  </span><br><span class="line">进入blog目录(注意：以下步骤都是在blog目录下完成的)：</span><br></pre></td></tr></table></figure></p>
-<p>`$ hexo init<br>$ cnpm install<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`安装完成之后，体验hexo</span><br></pre></td></tr></table></figure></p>
-<p>`$ hexo g # 生成<br>$ hexo s # 启动服务预览（生成在本地）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">`</span><br><span class="line">打开本地地址：localhost:4000</span><br><span class="line">#### 部署Hexo到Github Pages：</span><br><span class="line">- 前提：将本地git连接到github上配置好</span><br><span class="line">- 在Github上创建的仓库（github名称.github.io），可以通过地址http://github名称.github.io直接访问，访问的文件就是其中的html静态文件，</span><br><span class="line">- 每次将写好的文章用hexo生成，然后用git提交到github上</span><br><span class="line">进入blog目录，打开博客站点的配置文件\_config.yml，在文件末尾修改：</span><br><span class="line"></span><br><span class="line">&gt; deploy:</span><br><span class="line">&gt; 　type: git</span><br><span class="line">&gt; 　repo: git@github.com:yashuning/yashuning.github.io.git</span><br><span class="line">&gt; 　branch: master</span><br><span class="line"></span><br><span class="line">注意，这种配置文件格式要求比较严格:</span><br><span class="line">如果文件末尾已经有deploy、type等字段，删去，改为以上的内容;</span><br><span class="line">type、repo、branch三个变量之前空两格，变量后的：之后空一格</span><br><span class="line"></span><br><span class="line">安装git部署插件：  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">`$ npm install hexo-deployer-git --save </span><br><span class="line">`</span><br><span class="line">`</span><br><span class="line">分别输入以下三条命令：</span><br></pre></td></tr></table></figure></p>
-<p>`$ hexo clean<br>$ hexo g<br>$ hexo d</p>
-<pre><code>`部署完成
-
-### hexo主题
-
-hexo提供了多款主题，我自己比较喜欢的是next主题
-进入blog文件夹（自己选择存放博客的文件夹）：
-
-</code></pre><p><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code><br>`<br>下载完成后，在blog/themes下出现一个next文件夹，这就是你的next主题<br>在blog目录下，更改站点配置文件_config.yml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.2/install.sh | bash </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">2）6.9是我选择的版本 ,安装好之后可以用npm安装cnpm和nrm，使用淘宝镜像，因为默认的镜像是国外的，访问速度慢。安装完成之后，我们可以用cnpm代替npm安装其他东西</span><br><span class="line"></span><br><span class="line">&gt; cnpm支持npm除了publish之外的所有命令，所以说你可以放心的使用cnpm来代替npm使用，这样可能使用包管理的时候更加的方便，因为服务器就在国内。但是，有时候如果你的网络情况比较渣的话，用啥都一样。</span><br><span class="line">  </span><br><span class="line">``` bash</span><br><span class="line">$ nvm install 6.9  </span><br><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h4 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h4><p>安装：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g </span><br><span class="line">``` </span><br><span class="line"> </span><br><span class="line">查看是否成功，成功后显示hexo版本  </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">hexo v </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">新建一个目录，存放你的博客。（我建的文件夹是blog）  </span><br><span class="line">进入blog目录(注意：以下步骤都是在blog目录下完成的)：</span><br></pre></td></tr></table></figure>
+<p>$ hexo init<br>$ cnpm install<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">安装完成之后，体验hexo    </span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">$ hexo g # 生成  </span><br><span class="line">$ hexo s # 启动服务预览（生成在本地）</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">打开本地地址：localhost:4000</span><br><span class="line">#### 部署Hexo到Github Pages：</span><br><span class="line"></span><br><span class="line">- 前提：将本地git连接到github上配置好</span><br><span class="line">- 在Github上创建的仓库（github名称.github.io），可以通过地址http://github名称.github.io直接访问，访问的文件就是其中的html静态文件，</span><br><span class="line">- 每次将写好的文章用hexo生成，然后用git提交到github上</span><br><span class="line">进入blog目录，打开博客站点的配置文件\_config.yml，在文件末尾修改：</span><br><span class="line"></span><br><span class="line">&gt; deploy:</span><br><span class="line">&gt; 　type: git</span><br><span class="line">&gt; 　repo: git@github.com:yashuning/yashuning.github.io.git</span><br><span class="line">&gt; 　branch: master</span><br><span class="line"></span><br><span class="line">注意，这种配置文件格式要求比较严格:</span><br><span class="line">如果文件末尾已经有deploy、type等字段，删去，改为以上的内容;</span><br><span class="line">type、repo、branch三个变量之前空两格，变量后的：之后空一格</span><br><span class="line"></span><br><span class="line">安装git部署插件：    </span><br><span class="line"></span><br><span class="line">``` bash </span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>分别输入以下三条命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>部署完成</p>
+<h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>hexo提供了多款主题，我自己比较喜欢的是next主题<br>进入blog文件夹（自己选择存放博客的文件夹）：</p>
+<pre><code class="bash">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next 
+</code></pre>
+<p>下载完成后，在blog/themes下出现一个next文件夹，这就是你的next主题<br>在blog目录下，更改站点配置文件_config.yml</p>
 <blockquote>
 <p>#Extensions<br>##Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a><br>##Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>#theme: landscape<br>theme: next</p>
 </blockquote>
@@ -664,7 +490,7 @@ hexo提供了多款主题，我自己比较喜欢的是next主题
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">积分GV</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
@@ -749,7 +575,7 @@ hexo提供了多款主题，我自己比较喜欢的是next主题
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -760,7 +586,7 @@ hexo提供了多款主题，我自己比较喜欢的是next主题
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">Kategorien</span>
                 </a>
               </div>
@@ -771,7 +597,7 @@ hexo提供了多款主题，我自己比较喜欢的是next主题
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">Tags</span>
                 </a>
               </div>

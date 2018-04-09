@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/19/GitHub-Pages-Hexo-搭建个人网站/index.html">
 <meta property="og:site_name" content="Yaya&#39;s blog">
 <meta property="og:description" content="搭建GitHub PagesGithub Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客登录github,新建一个仓库，名称必须是：你的github名称.github.io HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓">
-<meta property="og:updated_time" content="2018-04-09T07:31:13.514Z">
+<meta property="og:updated_time" content="2018-04-09T07:32:56.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Pages+Hexo 搭建个人网站">
 <meta name="twitter:description" content="搭建GitHub PagesGithub Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客登录github,新建一个仓库，名称必须是：你的github名称.github.io HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓">
@@ -361,13 +361,24 @@
 <p>新建一个目录，存放你的博客。（我建的文件夹是blog）<br>进入blog目录(注意：以下步骤都是在blog目录下完成的)：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ cnpm install</span><br></pre></td></tr></table></figure>
 <p>安装完成之后，体验hexo    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g # 生成  </span><br><span class="line">$ hexo s # 启动服务预览（生成在本地）</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">打开本地地址：localhost:4000</span><br><span class="line">#### 部署Hexo到Github Pages：</span><br><span class="line"></span><br><span class="line">- 前提：将本地git连接到github上配置好</span><br><span class="line">- 在Github上创建的仓库（github名称.github.io），可以通过地址http://github名称.github.io直接访问，访问的文件就是其中的html静态文件，</span><br><span class="line">- 每次将写好的文章用hexo生成，然后用git提交到github上</span><br><span class="line">进入blog目录，打开博客站点的配置文件\_config.yml，在文件末尾修改：</span><br><span class="line"></span><br><span class="line">&gt; deploy:</span><br><span class="line">&gt; 　type: git</span><br><span class="line">&gt; 　repo: git@github.com:yashuning/yashuning.github.io.git</span><br><span class="line">&gt; 　branch: master</span><br><span class="line"></span><br><span class="line">注意，这种配置文件格式要求比较严格:</span><br><span class="line">如果文件末尾已经有deploy、type等字段，删去，改为以上的内容;</span><br><span class="line">type、repo、branch三个变量之前空两格，变量后的：之后空一格</span><br><span class="line"></span><br><span class="line">安装git部署插件：    </span><br><span class="line"></span><br><span class="line">``` bash </span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g # 生成  </span><br><span class="line">$ hexo s # 启动服务预览（生成在本地）</span><br></pre></td></tr></table></figure>
+<p>打开本地地址：localhost:4000</p>
+<h4 id="部署Hexo到Github-Pages："><a href="#部署Hexo到Github-Pages：" class="headerlink" title="部署Hexo到Github Pages："></a>部署Hexo到Github Pages：</h4><ul>
+<li>前提：将本地git连接到github上配置好</li>
+<li>在Github上创建的仓库（github名称.github.io），可以通过地址<a href="http://github名称.github.io直接访问，访问的文件就是其中的html静态文件，" target="_blank" rel="noopener">http://github名称.github.io直接访问，访问的文件就是其中的html静态文件，</a></li>
+<li>每次将写好的文章用hexo生成，然后用git提交到github上<br>进入blog目录，打开博客站点的配置文件_config.yml，在文件末尾修改：</li>
+</ul>
+<blockquote>
+<p>deploy:<br>　type: git<br>　repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yashuning/yashuning.github.io.git<br>　branch: master</p>
+</blockquote>
+<p>注意，这种配置文件格式要求比较严格:<br>如果文件末尾已经有deploy、type等字段，删去，改为以上的内容;<br>type、repo、branch三个变量之前空两格，变量后的：之后空一格</p>
+<p>安装git部署插件：    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>分别输入以下三条命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <p>部署完成</p>
 <h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>hexo提供了多款主题，我自己比较喜欢的是next主题<br>进入blog文件夹（自己选择存放博客的文件夹）：</p>
-<pre><code class="bash">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next 
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 <p>下载完成后，在blog/themes下出现一个next文件夹，这就是你的next主题<br>在blog目录下，更改站点配置文件_config.yml</p>
 <blockquote>
 <p>#Extensions<br>##Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a><br>##Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br>#theme: landscape<br>theme: next</p>
@@ -545,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建GitHub-Pages"><span class="nav-number">1.</span> <span class="nav-text">搭建GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">2.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">配置Hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo主题"><span class="nav-number">3.</span> <span class="nav-text">hexo主题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建GitHub-Pages"><span class="nav-number">1.</span> <span class="nav-text">搭建GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">2.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">配置Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署Hexo到Github-Pages："><span class="nav-number">2.4.</span> <span class="nav-text">部署Hexo到Github Pages：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo主题"><span class="nav-number">3.</span> <span class="nav-text">hexo主题</span></a></li></ol></div>
             
 
           </div>

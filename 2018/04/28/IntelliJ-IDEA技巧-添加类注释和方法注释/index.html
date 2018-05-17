@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/define.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/变量设置.png">
 <meta property="og:image" content="http://yoursite.com/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/自定义param.png">
-<meta property="og:updated_time" content="2018-05-17T09:55:16.969Z">
+<meta property="og:updated_time" content="2018-05-17T10:11:04.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IntelliJ IDEA技巧-添加类注释和方法注释">
 <meta name="twitter:description" content="添加文件头注释打开设置：Editor-&amp;gt;Filr and Code Templates-&amp;gt;Includes-&amp;gt;File Header  这个注释只是你在生成类文件时在类上方的注释右下角是idea中模板中支持的变量 我的注释模板 : 12345678/*** @program: $&amp;#123;PROJECT_NAME&amp;#125;* @Package $&amp;#123;PACKAGE_N">
@@ -193,7 +193,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -223,7 +223,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -287,7 +287,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-28T16:27:41+08:00">
                 2018-04-28
@@ -308,7 +308,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">in</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -369,13 +369,13 @@
 </ol>
 <p>生成注释：你设置的Abbreviation快捷键 + Expand设置的快捷键</p>
 <h5 id="填写基本设置"><a href="#填写基本设置" class="headerlink" title="填写基本设置"></a>填写基本设置</h5><p><img src="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/新建方法模板.png" alt="新建方法模板"></p>
-<p><img src="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/define.png" width="315" height="385" alt="define" align="center"> </p>
+<p><img src="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/define.png" width="315" height="385" alt="define"> </p>
 <p>在Edit variables中，设置你在注释模板中的参数：</p>
-<p><img src="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/变量设置.png" width="415" height="155" alt="变量设置" align="center">  </p>
+<p><img src="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/变量设置.png" width="415" height="155" alt="变量设置">  </p>
 <h5 id="自定义注释参数显示"><a href="#自定义注释参数显示" class="headerlink" title="自定义注释参数显示"></a>自定义注释参数显示</h5><p>但是idea中的param参数显示的是一个数组</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> [param1,param2...]</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Description</span>: 测试生成方法注释的参数</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author</span> Miss.Ning</span></span><br><span class="line"><span class="comment">* <span class="doctag">@date</span> 2018/04/28 15:50</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodTest</span><span class="params">(<span class="keyword">int</span> param1, String param2...)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以用groovyScript脚本写一个生成参数，将多个参数分行显示<br>如果采用以上的自定义参数模板，那么注释模板也要改变  </p>
-<p><img src="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/自定义param.png" width="410" height="155" alt="自定义param" align="center">  </p>
+<p><img src="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/自定义param.png" width="410" height="155" alt="自定义param">  </p>
 <p>将以下内容写到param的expression中即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(&quot;def result=&apos;&apos;; def params=\&quot;$&#123;_1&#125;\&quot;.replaceAll(&apos;[\\\\[|\\\\]|\\\\s]&apos;, &apos;&apos;).split(&apos;,&apos;).toList(); for(i = 0; i &lt; params.size(); i++) &#123;result+=&apos; * @param &apos; + params[i] + &apos;\\t&apos; + ((i &lt; params.size() - 1) ? &apos;\\n&apos; : &apos;&apos;)&#125;; return result&quot;, methodParameters())</span><br></pre></td></tr></table></figure>
 <h5 id="生成注释方式以及注释模板"><a href="#生成注释方式以及注释模板" class="headerlink" title="生成注释方式以及注释模板"></a>生成注释方式以及注释模板</h5><p>Abbreviation是你生成注释打的一个提示，如果你写的是a，那么你在写注释时只用打一个a，按tab键即可生成</p>
@@ -487,10 +487,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -511,7 +511,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -522,7 +522,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">Kategorien</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -533,7 +533,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">14</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -595,7 +595,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

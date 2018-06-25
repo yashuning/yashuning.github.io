@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Centos7,jdk8," />
+  <meta name="keywords" content="Centos7,系统语言," />
 
 
 
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="查看本机jdk先查看系统有没有自带的jdk   123rpm -qa | grep java #查看内置的JDKrpm -e --nodeps jdk相关名称 #如果有，进行卸载rpm -qa | grep java #查看是否卸载干净 下载安装包安装方式下载jdk8官网下载jdk8http://www.oracle.com/technetwork/java/javase/downloads/jd">
-<meta name="keywords" content="Centos7,jdk8">
+<meta name="description" content="修改Centos7系统语言如：将系统语言改为中文格式 使用locale命令查看当前系统默认采用的字符集：locale 或 echo $LANG 修改语言123456789101112# 1.查看系统中已经有的语言包（查找中文语言包：zh_CN开头的包）locale -a	# 2.如果没有，则安装中文语言包yum groupinstall Chinese-support# 3.安装后再用命令查看安装">
+<meta name="keywords" content="Centos7,系统语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos7安装jdk8">
-<meta property="og:url" content="http://yoursite.com/2018/05/17/Centos7安装jdk8/index.html">
+<meta property="og:title" content="Centos7 - 修改系统语言">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/Centos7-修改系统语言/index.html">
 <meta property="og:site_name" content="Yaya&#39;s blog">
-<meta property="og:description" content="查看本机jdk先查看系统有没有自带的jdk   123rpm -qa | grep java #查看内置的JDKrpm -e --nodeps jdk相关名称 #如果有，进行卸载rpm -qa | grep java #查看是否卸载干净 下载安装包安装方式下载jdk8官网下载jdk8http://www.oracle.com/technetwork/java/javase/downloads/jd">
-<meta property="og:updated_time" content="2018-05-17T10:10:41.507Z">
+<meta property="og:description" content="修改Centos7系统语言如：将系统语言改为中文格式 使用locale命令查看当前系统默认采用的字符集：locale 或 echo $LANG 修改语言123456789101112# 1.查看系统中已经有的语言包（查找中文语言包：zh_CN开头的包）locale -a	# 2.如果没有，则安装中文语言包yum groupinstall Chinese-support# 3.安装后再用命令查看安装">
+<meta property="og:updated_time" content="2018-05-24T06:26:12.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos7安装jdk8">
-<meta name="twitter:description" content="查看本机jdk先查看系统有没有自带的jdk   123rpm -qa | grep java #查看内置的JDKrpm -e --nodeps jdk相关名称 #如果有，进行卸载rpm -qa | grep java #查看是否卸载干净 下载安装包安装方式下载jdk8官网下载jdk8http://www.oracle.com/technetwork/java/javase/downloads/jd">
+<meta name="twitter:title" content="Centos7 - 修改系统语言">
+<meta name="twitter:description" content="修改Centos7系统语言如：将系统语言改为中文格式 使用locale命令查看当前系统默认采用的字符集：locale 或 echo $LANG 修改语言123456789101112# 1.查看系统中已经有的语言包（查找中文语言包：zh_CN开头的包）locale -a	# 2.如果没有，则安装中文语言包yum groupinstall Chinese-support# 3.安装后再用命令查看安装">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/17/Centos7安装jdk8/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/24/Centos7-修改系统语言/"/>
 
 
 
 
 
-  <title>Centos7安装jdk8 | Yaya's blog</title>
+  <title>Centos7 - 修改系统语言 | Yaya's blog</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/Centos7安装jdk8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/Centos7-修改系统语言/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yashuning">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Centos7安装jdk8</h1>
+          <h1 class="post-title" itemprop="name headline">Centos7 - 修改系统语言</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T17:30:25+08:00">
-                2018-05-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-24T09:37:38+08:00">
+                2018-05-24
               </time>
             
 
@@ -341,12 +341,20 @@
       
 
       
-        <h3 id="查看本机jdk"><a href="#查看本机jdk" class="headerlink" title="查看本机jdk"></a>查看本机jdk</h3><p>先查看系统有没有自带的jdk  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java <span class="comment">#查看内置的JDK</span></span><br><span class="line">rpm -e --nodeps jdk相关名称 <span class="comment">#如果有，进行卸载</span></span><br><span class="line">rpm -qa | grep java <span class="comment">#查看是否卸载干净</span></span><br></pre></td></tr></table></figure>
-<h3 id="下载安装包安装方式"><a href="#下载安装包安装方式" class="headerlink" title="下载安装包安装方式"></a>下载安装包安装方式</h3><h4 id="下载jdk8"><a href="#下载jdk8" class="headerlink" title="下载jdk8"></a>下载jdk8</h4><p>官网下载jdk8<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
-<h4 id="放在系统中，解压"><a href="#放在系统中，解压" class="headerlink" title="放在系统中，解压"></a>放在系统中，解压</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压生成的文件夹jdk1.8.0_171</span></span><br><span class="line">tar -zxvf jdk-8u171-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL下添加</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/<span class="built_in">local</span>/program/java/jdk1.8.0_171</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使配置文件生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-<h4 id="查看是否安装成功"><a href="#查看是否安装成功" class="headerlink" title="查看是否安装成功"></a>查看是否安装成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line">java</span><br></pre></td></tr></table></figure>
+        <h3 id="修改Centos7系统语言"><a href="#修改Centos7系统语言" class="headerlink" title="修改Centos7系统语言"></a>修改Centos7系统语言</h3><p>如：将系统语言改为中文格式</p>
+<h4 id="使用locale命令"><a href="#使用locale命令" class="headerlink" title="使用locale命令"></a>使用locale命令</h4><p>查看当前系统默认采用的字符集：locale 或 echo $LANG</p>
+<h4 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.查看系统中已经有的语言包（查找中文语言包：zh_CN开头的包）</span></span><br><span class="line">locale -a	</span><br><span class="line"><span class="comment"># 2.如果没有，则安装中文语言包</span></span><br><span class="line">yum groupinstall Chinese-support</span><br><span class="line"><span class="comment"># 3.安装后再用命令查看安装好中文包，复制语言包名称</span></span><br><span class="line">locale -a	</span><br><span class="line"><span class="comment"># 4.修改系统语言，LANG的值是你上一步找到的包名称</span></span><br><span class="line"><span class="comment"># 方式一</span></span><br><span class="line">vim /etc/locale.conf</span><br><span class="line">LANG=zh_CN.*</span><br><span class="line"><span class="comment"># 方式二（Centos新增命令方式）</span></span><br><span class="line">localectl  <span class="built_in">set</span>-locale LANG=zh_CN.*</span><br></pre></td></tr></table></figure>
+<p>注意，在查看中文语言安装包时，必须复制包名称，否则在修改配置文件或执行命令时名称不一致会造成修改失败，网上给的方式中，名称有可能与你的系统中包名称不一致</p>
+<p>英文：以en_US开头的</p>
+<h3 id="Centos6修改方式"><a href="#Centos6修改方式" class="headerlink" title="Centos6修改方式"></a>Centos6修改方式</h3><p>Centos6中是修改配置文件：/etc/sysconfig/i18n</p>
+<h3 id="用iterm2-ssh连接服务器编码不一致"><a href="#用iterm2-ssh连接服务器编码不一致" class="headerlink" title="用iterm2 ssh连接服务器编码不一致"></a>用iterm2 ssh连接服务器编码不一致</h3><p>我遇到一个问题，在虚拟机中Centos7系统是英文状态，但是用iterm2远程ssh连接，用locale查看，变成了中文状态  </p>
+<p>原因：mac 使用ssh命令会发送本地语言环境到目标服务器</p>
+<h4 id="修改服务器端"><a href="#修改服务器端" class="headerlink" title="修改服务器端"></a>修改服务器端</h4><p>解决：在服务器端，修改文件： vim ~/.bashrc，文件末尾加一行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=<span class="string">'en_US.utf8'</span></span><br></pre></td></tr></table></figure>
+<p>但是这种办法不通用，没连接一个服务器都要设置</p>
+<h4 id="修改本地"><a href="#修改本地" class="headerlink" title="修改本地"></a>修改本地</h4><p>修改配置文件：/etc/ssh/ssh_config（用root权限）</p>
+<p>将内容：SendEnv LANG LC_* 注释</p>
+
       
     </div>
     
@@ -365,7 +373,7 @@
           
             <a href="/tags/Centos7/" rel="tag"># Centos7</a>
           
-            <a href="/tags/jdk8/" rel="tag"># jdk8</a>
+            <a href="/tags/系统语言/" rel="tag"># 系统语言</a>
           
         </div>
       
@@ -378,8 +386,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/16/mac-使用scp或iTerm2-rz、sz上传下载文件/" rel="next" title="mac 使用scp或iTerm2+rz、sz上传下载文件">
-                <i class="fa fa-chevron-left"></i> mac 使用scp或iTerm2+rz、sz上传下载文件
+              <a href="/2018/05/17/Centos7-安装jdk8/" rel="next" title="Centos7 - 安装jdk8">
+                <i class="fa fa-chevron-left"></i> Centos7 - 安装jdk8
               </a>
             
           </div>
@@ -388,8 +396,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/17/Centos7安装Hadoop集群/" rel="prev" title="Centos7安装Hadoop集群">
-                Centos7安装Hadoop集群 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/24/Centos7-安装Hadoop集群/" rel="prev" title="Centos7 - 安装Hadoop集群">
+                Centos7 - 安装Hadoop集群 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,7 +475,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -478,7 +486,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -489,7 +497,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -522,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看本机jdk"><span class="nav-number">1.</span> <span class="nav-text">查看本机jdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装包安装方式"><span class="nav-number">2.</span> <span class="nav-text">下载安装包安装方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载jdk8"><span class="nav-number">2.1.</span> <span class="nav-text">下载jdk8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#放在系统中，解压"><span class="nav-number">2.2.</span> <span class="nav-text">放在系统中，解压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.3.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看是否安装成功"><span class="nav-number">2.4.</span> <span class="nav-text">查看是否安装成功</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改Centos7系统语言"><span class="nav-number">1.</span> <span class="nav-text">修改Centos7系统语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用locale命令"><span class="nav-number">1.1.</span> <span class="nav-text">使用locale命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改语言"><span class="nav-number">1.2.</span> <span class="nav-text">修改语言</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Centos6修改方式"><span class="nav-number">2.</span> <span class="nav-text">Centos6修改方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用iterm2-ssh连接服务器编码不一致"><span class="nav-number">3.</span> <span class="nav-text">用iterm2 ssh连接服务器编码不一致</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改服务器端"><span class="nav-number">3.1.</span> <span class="nav-text">修改服务器端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改本地"><span class="nav-number">3.2.</span> <span class="nav-text">修改本地</span></a></li></ol></li></ol></div>
             
 
           </div>

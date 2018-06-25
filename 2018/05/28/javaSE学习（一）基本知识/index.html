@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="javaSE,基本知识," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数据类型 数据类型分为：  基本数据类型 引用数据类型  基本数据类型：4类8种    类型种类字节范围    整型byte1-128~127    short2-128~127    int4-128~127    long8-128~127    浮点型float4有效位数6~7位    double8有效位数为15位    字符型char1\u0000到\Uffff    布尔型boolea">
+<meta name="keywords" content="javaSE,基本知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaSE学习（一）基本知识">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/javaSE学习（一）基本知识/index.html">
+<meta property="og:site_name" content="Yaya&#39;s blog">
+<meta property="og:description" content="数据类型 数据类型分为：  基本数据类型 引用数据类型  基本数据类型：4类8种    类型种类字节范围    整型byte1-128~127    short2-128~127    int4-128~127    long8-128~127    浮点型float4有效位数6~7位    double8有效位数为15位    字符型char1\u0000到\Uffff    布尔型boolea">
+<meta property="og:image" content="http://yoursite.com/2018/05/28/javaSE学习（一）基本知识/数据类型.png">
+<meta property="og:updated_time" content="2018-05-28T08:46:11.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javaSE学习（一）基本知识">
+<meta name="twitter:description" content="数据类型 数据类型分为：  基本数据类型 引用数据类型  基本数据类型：4类8种    类型种类字节范围    整型byte1-128~127    short2-128~127    int4-128~127    long8-128~127    浮点型float4有效位数6~7位    double8有效位数为15位    字符型char1\u0000到\Uffff    布尔型boolea">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/28/javaSE学习（一）基本知识/数据类型.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/28/javaSE学习（一）基本知识/"/>
+
+
+
+
+
+  <title>javaSE学习（一）基本知识 | Yaya's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Yaya's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/javaSE学习（一）基本知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yashuning">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yaya's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javaSE学习（一）基本知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T14:30:40+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">javaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><img src="/2018/05/28/javaSE学习（一）基本知识/数据类型.png" alt="数据类型"></p>
+<p>数据类型分为：</p>
+<ul>
+<li>基本数据类型</li>
+<li>引用数据类型</li>
+</ul>
+<h4 id="基本数据类型：4类8种"><a href="#基本数据类型：4类8种" class="headerlink" title="基本数据类型：4类8种"></a>基本数据类型：4类8种</h4><table><br>    <tr><th>类型</th><th>种类</th><th>字节</th><th>范围</th></tr><br>    <tr><td rowspan="4">整型</td><td>byte</td><td>1</td><td>-128~127</td></tr><br>    <tr><td>short</td><td>2</td><td>-128~127</td></tr><br>    <tr><td>int</td><td>4</td><td>-128~127</td></tr><br>    <tr><td>long</td><td>8</td><td>-128~127</td></tr><br>    <tr><td rowspan="2">浮点型</td><td>float</td><td>4</td><td>有效位数6~7位</td></tr><br>    <tr><td>double</td><td>8</td><td>有效位数为15位</td></tr><br>    <tr><td rowspan="1">字符型</td><td>char</td><td>1</td><td>\u0000到\Uffff</td></tr><br>    <tr><td rowspan="1">布尔型</td><td>boolean</td><td>1</td><td></td></tr><br></table>
+
+<ul>
+<li>整数默认int类型,浮点数默认double.  </li>
+<li>长整型必须加L或l后缀，如long a =  10000000L；</li>
+<li>float类型加后缀F或f，如1.5F；没有后缀默认double</li>
+<li>char类型用单引号括起来</li>
+</ul>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h4><h4 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h4><p>java中变量必须用赋值语句对变量进行显式初始化<br>可以在声明变量时进行赋值，也可以之后赋值，但是必须在使用之前，如果一个变量没有被赋值，那这个变量不能被使用  </p>
+<h4 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在同一行进行多个变量的定义和初始化，不建议</span></span><br><span class="line"><span class="keyword">int</span> a=<span class="number">0</span>;<span class="keyword">int</span> b;<span class="keyword">int</span> c;</span><br><span class="line"><span class="comment">//一行定义一个变量</span></span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>用关键字声明常量<br>常量只能被赋值一次，在赋值之后不能再进行更改<br>习惯上常量命名风格是全部大写  </p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="运算符介绍"><a href="#运算符介绍" class="headerlink" title="运算符介绍"></a>运算符介绍</h4><p>运算符分为：算术运算符、赋值运算符、比较运算符、逻辑运算符、位运算符，三目运算符</p>
+<h5 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h5><p>+、-、*、/、%、++、–</p>
+<p>整数在进行/运算时，结果是整数；如果要得到浮点类型结果，需要将其中一个数据转换为浮点数类型</p>
+<h6 id="运算符-1"><a href="#运算符-1" class="headerlink" title="+运算符"></a>+运算符</h6><p>用法：</p>
+<ul>
+<li>数值加法运算</li>
+<li>正号</li>
+<li>字符串连接符</li>
+</ul>
+<h6 id="、–自增自减运算符："><a href="#、–自增自减运算符：" class="headerlink" title="++、–自增自减运算符："></a>++、–自增自减运算符：</h6><ul>
+<li>i++：先进行表达式运算，再自增</li>
+<li>++i：先自增再进行表达式运算</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>；</span><br><span class="line"><span class="keyword">int</span> j = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> x = i++;</span><br><span class="line"><span class="keyword">int</span> y = ++j；</span><br><span class="line">System.out.println(<span class="string">"i = "</span>+i+<span class="string">"   j="</span>+j);	<span class="comment">//i=2   j=2</span></span><br><span class="line">System.out.println(<span class="string">"x = "</span>+x+<span class="string">"   y="</span>+y);	<span class="comment">//x=1   j=2</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子可以看出，无论是i++还是++j，对i和j本身的值无关，都是+1后的结果；但是符号的位置对赋值运算的结果会有影响，例子中x和y的值完全不同</p>
+<p>单独进行自增、自减运算：运算符位置对进行自增自减运算的无区别  </p>
+<p>参与表达式运算：</p>
+<ul>
+<li>在操作数之前，先进行自增运算，再参与其他表达式运算</li>
+<li>在操作数之后，先进行其他表达式运算，再自增运算</li>
+</ul>
+<h5 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h5><p>==,!=,&gt;,&gt;=,&lt;,&lt;=</p>
+<p>运算结果都为boolean</p>
+<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h5><h5 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h5><h5 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h5><p>格式：表达式?表达式1:表达式2  </p>
+<p>表达式结果是boolean类型；表达式计算结果为true，执行表达式1返回结果；false执行表达式2返回结果；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> y = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> z = (x&gt;y)?x:y;	</span><br><span class="line">System.out.println(<span class="string">"z="</span>+z);	<span class="comment">//z=5</span></span><br></pre></td></tr></table></figure>
+<h4 id="运算符级别"><a href="#运算符级别" class="headerlink" title="运算符级别"></a>运算符级别</h4><p>运算符的优先级如下：</p>
+<table><br>    <tr><th>运算符优先级</th><th>运算符</th><th>结合性</th></tr><br>    <tr><td>1</td><td>()[].</td><td>从左到右</td></tr><br>    <tr><td>2</td><td>! +(正) -(负) ~ ++ –</td><td>从左到右</td></tr><br>    <tr><td>3</td><td><em> / %</em></td><td>从左到右</td></tr><br>    <tr><td>4</td><td>+(加) -(减)</td><td>从左到右</td></tr><br>    <tr><td>5</td><td>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td><td>从左到右</td></tr><br>    <tr><td>6</td><td>&lt; &lt;= &gt; &gt;= instanceof</td><td>从左到右</td></tr><br>    <tr><td>7</td><td>== !=</td><td>从左到右</td></tr><br>    <tr><td>8</td><td>&amp;(按位与)</td><td>从左到右</td></tr><br>    <tr><td>3</td><td>^</td><td>从左到右</td></tr><br>    <tr><td>4</td><td>|</td><td>从左到右</td></tr><br>    <tr><td>5</td><td>&amp;&amp;</td><td>从左到右</td></tr><br>    <tr><td>6</td><td>||</td><td>从左到右</td></tr><br>    <tr><td>7</td><td>?:</td><td>从右到左</td></tr><br>    <tr><td>8</td><td>= += -= = /= %= &amp;= |= ^=  ~=  &lt;&lt;= &gt;&gt;=   &gt;&gt;&gt;=</td><td>从右到左</td></tr><br></table>
+
+<h4 id="数值类型转换"><a href="#数值类型转换" class="headerlink" title="数值类型转换"></a>数值类型转换</h4><p>在计算时，参与计算的数据类型一般要一致，如果不一致，则要将数据进行类型的转换  </p>
+<p>boolean不参与数据转换</p>
+<p>数值类型的转换，分为默认转换和强制转换</p>
+<h5 id="默认转换"><a href="#默认转换" class="headerlink" title="默认转换"></a>默认转换</h5><p>默认转换，前提是数据类型从小到大才会默认转换  </p>
+<p>byte、short、char-&gt;int-&gt;long-&gt;float-&gt;double  </p>
+<p>byte、short、char这三种类型之间不进行转换，在参与运算时之间转换为int类型</p>
+<h5 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h5><p>将字节大的转换为字节小的数据类型，需要强制转换  </p>
+<p>转换格式：目标数据类型 目标变量 = (目标数据类型)被转换数据;</p>
+<p>注意: 如果将一个数值从一种字节大的类型强制转换为另一种字节小的类型，并且超出了目标类型的表示范围，目标结果就会被截断成一个完全不同的值。例如:int是300的值强制转换为byte后的实际值为44：(byte)300=44</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//byte c = a + b;这个语句在编译时会报错：损失精度，需要前置转换</span></span><br><span class="line"><span class="keyword">byte</span> c = (<span class="keyword">byte</span>)a + b;</span><br></pre></td></tr></table></figure>
+<p>分析直接定义和强制转换：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f1 = (<span class="keyword">float</span>)<span class="number">1.2345</span>;</span><br><span class="line"><span class="keyword">float</span> f2 = <span class="number">1.2345F</span>;</span><br></pre></td></tr></table></figure>
+<p>以上两个语句都正确，但是有区别：f1是通过double类型的数据强制转换来的；而f2变量定义的就是一个float类型  </p>
+<p>分析运算</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1 = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">byte</span> b2 = <span class="number">4</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	byte类型做计算，会自动转换为int类型</span></span><br><span class="line"><span class="comment">	需要强转，因为byte 3+byte 4 结果自动转换为int类型</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">byte</span> b3 = (<span class="keyword">byte</span>)b1 + b2;	</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	3+4=7是一个常量</span></span><br><span class="line"><span class="comment">	在运算时将3+4计算出来，然后看这个结果值常量是否在byte范围内，在则不报错，不在会报错</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">byte</span> b4 = <span class="number">3</span> + <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>java字符串用String定义，就是Unicode字符序列；字符串是一个对象  </p>
+<p>每个用双引号括起来的字符串都是 String 类，如：String s = “java string”;</p>
+<h4 id="字符串的拼接"><a href="#字符串的拼接" class="headerlink" title="字符串的拼接"></a>字符串的拼接</h4><p>使用+</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">123</span>;</span><br><span class="line">String num = a+<span class="string">"456"</span>;	<span class="comment">//num = "123456"</span></span><br></pre></td></tr></table></figure>
+<p>一个字符串与其他类型的变量拼接，都会被转换为字符串</p>
+<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><p>从键盘输入数据，让程序读取接收</p>
+<h4 id="读取键盘输入"><a href="#读取键盘输入" class="headerlink" title="读取键盘输入"></a>读取键盘输入</h4><p>控制台输出，标准输出流：System.out.println();  </p>
+<p>读取输入流（键盘输入内容）：System.in；但是程序不能像输入流一样直接输出，读取输入流必须要借助Scanner对象，java5中的java.util.Scanner  </p>
+<p>Scanner in = new Scanner(System.in);  </p>
+<p>通过以上语句创建出Scanner对象，控制台等待用户输入，回车键结束输入；控制台输入的数据传给Scanner对象，用next相关方法获取相关数据  </p>
+<h5 id="Scanner相关方法"><a href="#Scanner相关方法" class="headerlink" title="Scanner相关方法"></a>Scanner相关方法</h5><table><br>    <tr><th>Return</th><th>MethodName</th><th>解释</th></tr><br>    <tr><br>        <td>Pattern</td><td>delimiter()</td><br>        <td>返回 Scanner 当前正在用于匹配分隔符的 Pattern（默认空格）</td><br>    </tr><br>    <tr><br>        <td>void</td><td> useDelimiter()</td><br>        <td>设置 Scanner 使用的匹配分隔符的 Pattern </td><br>    </tr><br>    <tr><br>        <td>String</td><td>next()</td><br>        <td>读取当前扫描位置的下一个单词（默认以空格作为分隔符）</td><br>    </tr><br>    <tr><br>        <td>String</td><td>nextLine()</td><br>        <td>读取当前扫描位置之后的行内容（默认以回车符作为分隔符）</td><br>    </tr><br>    <tr><br>        <td>int</td><td>nextlnt</td><br>        <td>读取当前扫描位置之后的整数（默认以回车符作为分隔符）</td><br>    </tr><br>    <tr><br>        <td>double</td><td>nextDouble</td><br>        <td>读读取并转换下一个表示整数或浮点数的字符序列</td><br>    </tr><br>    <tr><br>        <td>boolean</td><td>hasNext()</td><br>        <td>判断 Scanner 中当前扫描位置后是否还存在行内容，存在返回true<br>        跟next()搭配</td><br>    </tr><br>    <tr><br>        <td>boolean</td><td>hasNextLine()</td><br>        <td>判断 Scanner 中当前扫描位置后是否还存在内容，存在返回 true<br>        跟nextLine()搭配</td><br>    </tr><br></table>
+
+<h5 id="next和nextLine"><a href="#next和nextLine" class="headerlink" title="next和nextLine"></a>next和nextLine</h5><h6 id="分别测试"><a href="#分别测试" class="headerlink" title="分别测试"></a>分别测试</h6><p>测试next方式和nextLine方式，输入内容：next 123,asdf  </p>
+<p>next方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(System.in); </span><br><span class="line">    System.out.println(<span class="string">"请输入字符串："</span>);</span><br><span class="line">    <span class="keyword">while</span>(sc.hasNext())&#123;</span><br><span class="line">    	System.out.println(sc.next());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">next</span><br><span class="line">123,asdf</span><br></pre></td></tr></table></figure>
+<p>nextLine方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(System.in); </span><br><span class="line">    System.out.println(<span class="string">"请输入字符串："</span>); </span><br><span class="line">    <span class="keyword">while</span>(sc.hasNextLine())&#123;</span><br><span class="line">    	System.out.println(sc.nextLine());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"---输入内容加\n回车符测试---"</span>);</span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(<span class="string">"disf 132,2wq \n a.db cdce/12"</span>); </span><br><span class="line">    <span class="keyword">while</span>(sc.hasNextLine())&#123;</span><br><span class="line">    	System.out.println(sc.nextLine());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">next 123,asdf</span><br><span class="line">---输入内容加\n回车符测试---</span><br><span class="line">disf 132,2wq </span><br><span class="line"> a.db cdce/12</span><br></pre></td></tr></table></figure>
+<p>设置分隔符方式，sc.useDelimiter设置分隔符仅仅对next方式有效，nextLine方式无效，还是以回车符进行分割行内容：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(<span class="string">"disf 132,2wq a.db cdce/12"</span>); </span><br><span class="line">    sc.useDelimiter(<span class="string">","</span>);</span><br><span class="line">    <span class="keyword">while</span>(sc.hasNext())&#123;</span><br><span class="line">    	System.out.println(sc.next());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">disf 132</span><br><span class="line">2wq a.db cdce/12</span><br></pre></td></tr></table></figure>
+<h6 id="两者区别"><a href="#两者区别" class="headerlink" title="两者区别"></a>两者区别</h6><p>next()：</p>
+<ul>
+<li>默认空白作为分隔符或者结束符时，对输入有效字符之前遇到的空白，next() 方法会自动去掉；不指定分隔符的情况下 next() 不能得到带有空格的字符串；</li>
+<li>使用 useDelimiter() 指定非空格字符为分隔符时，可以得到带空格的字符串；</li>
+</ul>
+<p>nextLine()：</p>
+<ul>
+<li>默认使用回车符作为分隔符，可以得到带空白的字符串；</li>
+<li>useDelimiter()无效；</li>
+</ul>
+<h5 id="Scanner的关闭"><a href="#Scanner的关闭" class="headerlink" title="Scanner的关闭"></a>Scanner的关闭</h5><p>使用close()方法关闭  </p>
+<p>注意：使用close时，会将 System.in 也关闭；要使用多个 Scanner 时，将这些scanner放在最后一同进行关闭</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javaSE/" rel="tag"># javaSE</a>
+          
+            <a href="/tags/基本知识/" rel="tag"># 基本知识</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/24/mac-mac中Terminal或Iterm2-ssh连接服务器中文乱码/" rel="next" title="mac - mac中Terminal或Iterm2 ssh连接服务器中文乱码">
+                <i class="fa fa-chevron-left"></i> mac - mac中Terminal或Iterm2 ssh连接服务器中文乱码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/28/javaSE学习（三）方法/" rel="prev" title="javaSE学习（三）方法">
+                javaSE学习（三）方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">yashuning</p>
+              <p class="site-description motion-element" itemprop="description">笨笨的程序媛...lalala</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型：4类8种"><span class="nav-number">1.1.</span> <span class="nav-text">基本数据类型：4类8种</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的作用域"><span class="nav-number">2.1.</span> <span class="nav-text">变量的作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量初始化"><span class="nav-number">2.2.</span> <span class="nav-text">变量初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的定义"><span class="nav-number">2.3.</span> <span class="nav-text">变量的定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">3.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符介绍"><span class="nav-number">4.1.</span> <span class="nav-text">运算符介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#算术运算符"><span class="nav-number">4.1.1.</span> <span class="nav-text">算术运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#运算符-1"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">+运算符</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#、–自增自减运算符："><span class="nav-number">4.1.1.2.</span> <span class="nav-text">++、–自增自减运算符：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#比较运算符"><span class="nav-number">4.1.2.</span> <span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">4.1.3.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#位运算符"><span class="nav-number">4.1.4.</span> <span class="nav-text">位运算符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三目运算符"><span class="nav-number">4.1.5.</span> <span class="nav-text">三目运算符</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符级别"><span class="nav-number">4.2.</span> <span class="nav-text">运算符级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值类型转换"><span class="nav-number">4.3.</span> <span class="nav-text">数值类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#默认转换"><span class="nav-number">4.3.1.</span> <span class="nav-text">默认转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#强制转换"><span class="nav-number">4.3.2.</span> <span class="nav-text">强制转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">5.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串的拼接"><span class="nav-number">5.1.</span> <span class="nav-text">字符串的拼接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入输出"><span class="nav-number">6.</span> <span class="nav-text">输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取键盘输入"><span class="nav-number">6.1.</span> <span class="nav-text">读取键盘输入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Scanner相关方法"><span class="nav-number">6.1.1.</span> <span class="nav-text">Scanner相关方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#next和nextLine"><span class="nav-number">6.1.2.</span> <span class="nav-text">next和nextLine</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#分别测试"><span class="nav-number">6.1.2.1.</span> <span class="nav-text">分别测试</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#两者区别"><span class="nav-number">6.1.2.2.</span> <span class="nav-text">两者区别</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scanner的关闭"><span class="nav-number">6.1.3.</span> <span class="nav-text">Scanner的关闭</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yashuning</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

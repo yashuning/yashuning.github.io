@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/19/hexo-GitHub-Pages-Hexo-搭建个人网站/index.html">
 <meta property="og:site_name" content="Yaya&#39;s blog">
 <meta property="og:description" content="搭建GitHub PagesGithub Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客登录github,新建一个仓库，名称必须是：你的github名称.github.io HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓">
-<meta property="og:updated_time" content="2018-05-24T01:50:14.842Z">
+<meta property="og:updated_time" content="2018-06-25T08:23:16.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo - GitHub Pages + Hexo 搭建个人网站">
 <meta name="twitter:description" content="搭建GitHub PagesGithub Pages是用户托管在github上的静态网页，因为Github Pages可以给我们提供一个免费的域名，所以我们通常使用他来构建自己的博客登录github,新建一个仓库，名称必须是：你的github名称.github.io HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓">
@@ -376,6 +376,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>分别输入以下三条命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo clean：清除缓存 - 清楚本地的 hexo 下面的public文件夹及里面的文件</li>
+<li>hexo g：生成静态文件 - 在 hexo 下生成public文件夹及里面的文件</li>
+<li>hexo d：部署到 GitHub - 在 hexo 下生成.deploy_git文件夹，并将public里面的内容拷贝过来，git就是将这里面的一些静态文件部署到GitHub Page</li>
+</ul>
 <p>部署完成</p>
 <h3 id="hexo主题"><a href="#hexo主题" class="headerlink" title="hexo主题"></a>hexo主题</h3><p>hexo提供了多款主题，我自己比较喜欢的是next主题<br>进入blog文件夹（自己选择存放博客的文件夹）：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>

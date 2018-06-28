@@ -318,11 +318,7 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
-
   
 
 
@@ -580,45 +576,30 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'yashuning',
-            repo: 'gitment-comments',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '64af1dc45db40c012336d1bf1924fb06029556a4',
-            
-                client_id: '2eef8a77d0221c5a0444'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'qjU0jvev0layQviymJ1YXIfF-gzGzoHsz',
+        appKey: 'JQkThWX1XlOWT6szRl1Wk4v3',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

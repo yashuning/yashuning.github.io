@@ -352,6 +352,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -503,6 +513,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/15/mac-iterm2-sshpass-shuttle实现ssh部分功能/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/15/mac-iterm2-sshpass-shuttle实现ssh部分功能/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -657,6 +677,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/28/IntelliJ-IDEA技巧-添加类注释和方法注释/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -809,6 +839,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/09/mac-打开MacOS-High-Sierra原生的读写NTFS功能/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/09/mac-打开MacOS-High-Sierra原生的读写NTFS功能/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -957,6 +997,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/19/hexo-GitHub-Pages-Hexo-搭建个人网站/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/hexo-GitHub-Pages-Hexo-搭建个人网站/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1083,6 +1133,16 @@ HexoHexo 是一个快速、简
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/14/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/14/hello-world/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -1416,21 +1476,30 @@ HexoHexo 是一个快速、简
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'qjU0jvev0layQviymJ1YXIfF-gzGzoHsz',
+        appKey: 'JQkThWX1XlOWT6szRl1Wk4v3',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>java - OCR tess4j识别图片文字</title>
+      <link href="/2018/08/22/java-OCR-tess4j%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E6%96%87%E5%AD%97/"/>
+      <url>/2018/08/22/java-OCR-tess4j%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E6%96%87%E5%AD%97/</url>
+      <content type="html"><![CDATA[<h3 id="Tess4j是什么"><a href="#Tess4j是什么" class="headerlink" title="Tess4j是什么"></a>Tess4j是什么</h3><p>Tesseract-OCR支持中文识别，并且开源和提供全套的训练工具，是快速低成本开发的首选。</p><p>Tess4J是Tesseract-OCR提供的一组Java工具类，对Tesseract OCR API.的Java JNA 封装。使java能够通过调用Tess4J的API来使用Tesseract OCR</p><h3 id="使用Tess4j"><a href="#使用Tess4j" class="headerlink" title="使用Tess4j"></a>使用Tess4j</h3><h4 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h4><p>Tess4J运行时会访问系统本地库（如windows的dll库） </p><ul><li>windows环境，则可以直接进行下一步，因为tess4j中的两个jar包：tess4j.jar、lept4j.jar已经内嵌了windows 32和64位DLL库  </li><li>其他环境如mac，tess4j中没有提供相关的dll库，所以需要先安装Tesseract：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tesseract</span><br></pre></td></tr></table></figure><blockquote><p>windows环境以外的平台，不安装安装Tesseract直接运行会报错：UnsatisfiedLinkError: Unable to load library ‘tesseract’<br>相关信息在github文档中给出了解释和解决办法：<a href="https://github.com/tesseract-ocr/tesseract/wiki" target="_blank" rel="noopener">https://github.com/tesseract-ocr/tesseract/wiki</a></p></blockquote><h4 id="tess4j相关下载地址"><a href="#tess4j相关下载地址" class="headerlink" title="tess4j相关下载地址"></a>tess4j相关下载地址</h4><ul><li>官网地址：<a href="http://tess4j.sourceforge.net/usage.html" target="_blank" rel="noopener">http://tess4j.sourceforge.net/usage.html</a>  </li><li>api文档参考：<a href="http://tess4j.sourceforge.net/docs/docs-3.4/" target="_blank" rel="noopener">http://tess4j.sourceforge.net/docs/docs-3.4/</a></li><li>字库地址：<a href="https://github.com/tesseract-ocr/tessdata/tree/3.04.00" target="_blank" rel="noopener">https://github.com/tesseract-ocr/tessdata/tree/3.04.00</a></li></ul><h4 id="准备项目环境"><a href="#准备项目环境" class="headerlink" title="准备项目环境"></a>准备项目环境</h4><h5 id="创建demo项目，在项目下创建文件夹lib"><a href="#创建demo项目，在项目下创建文件夹lib" class="headerlink" title="创建demo项目，在项目下创建文件夹lib"></a>创建demo项目，在项目下创建文件夹lib</h5><h5 id="jar包"><a href="#jar包" class="headerlink" title="jar包"></a>jar包</h5><p>解压下载好的zip：Tess4J-3.4.8-src.zip  </p><p>将dist目录和lib下的jar包全部拷贝到项目的lib中，build path</p><h5 id="准备语言库"><a href="#准备语言库" class="headerlink" title="准备语言库"></a>准备语言库</h5><p>如果是识别图片中的英文，不需要额外准备字库，如果需要识别中文或其他语言，则需要下载字库</p><p>在<a href="https://github.com/tesseract-ocr/tessdata/tree/3.04.00" target="_blank" rel="noopener">github</a>中找到所需要的字库（中文字库：chi_sim.traineddata）</p><h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tess4jTest</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//创建识别的图片</span></span><br><span class="line">File imageFile = <span class="keyword">new</span> File(<span class="string">"/.../Downloads/eg.png"</span>);</span><br><span class="line">ITesseract instance = <span class="keyword">new</span> Tesseract();</span><br><span class="line"><span class="comment">//设置tessdata的路径，如果放在项目根目录下则不需要制定，如果不在则指定为tessdata目录的绝对路径</span></span><br><span class="line">instance.setDatapath(<span class="string">"/Users/xxx/.../OCR/Tess4J-3.4.8"</span>);</span><br><span class="line"><span class="comment">//如果是识别英文，不需要以下语句指定，如果识别英文以外的语言，则需要设置识别语言（中文是chi_sim）</span></span><br><span class="line">instance.setLanguage(<span class="string">"chi_sim"</span>);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">String result = instance.doOCR(imageFile);  </span><br><span class="line">System.out.println(result);</span><br><span class="line">&#125; <span class="keyword">catch</span> (TesseractException e) &#123;</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> OCR </tag>
+            
+            <tag> tess4j </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>hexo - Next 主题添加搜索功能</title>
       <link href="/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/"/>
       <url>/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>

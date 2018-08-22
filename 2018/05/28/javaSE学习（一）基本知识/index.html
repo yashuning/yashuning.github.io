@@ -88,7 +88,7 @@
 <meta property="og:description" content="数据类型 数据类型分为：  基本数据类型 引用数据类型  基本数据类型：4类8种java中，所有的数据类型所占的字节数量与平台无关       类型种类字节范围    整型byte1-128~127    short2-128~127    int4-128~127    long8-128~127    浮点型float4有效位数6~7位    double8有效位数为15位    字符型cha">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/05/28/javaSE学习（一）基本知识/数据类型.png">
-<meta property="og:updated_time" content="2018-08-20T15:23:34.893Z">
+<meta property="og:updated_time" content="2018-08-20T15:27:18.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaSE学习（一）基本知识">
 <meta name="twitter:description" content="数据类型 数据类型分为：  基本数据类型 引用数据类型  基本数据类型：4类8种java中，所有的数据类型所占的字节数量与平台无关       类型种类字节范围    整型byte1-128~127    short2-128~127    int4-128~127    long8-128~127    浮点型float4有效位数6~7位    double8有效位数为15位    字符型cha">
@@ -477,6 +477,8 @@
 <p>通过以上语句创建出Scanner对象，控制台等待用户输入，回车键结束输入；控制台输入的数据传给Scanner对象，用next相关方法获取相关数据  </p>
 <h5 id="Scanner相关方法"><a href="#Scanner相关方法" class="headerlink" title="Scanner相关方法"></a>Scanner相关方法</h5><table><br>    <tr><th>Return</th><th>MethodName</th><th>解释</th></tr><br>    <tr><br>        <td>Pattern</td><td>delimiter()</td><br>        <td>返回 Scanner 当前正在用于匹配分隔符的 Pattern（默认空格）</td><br>    </tr><br>    <tr><br>        <td>void</td><td> useDelimiter()</td><br>        <td>设置 Scanner 使用的匹配分隔符的 Pattern </td><br>    </tr><br>    <tr><br>        <td>String</td><td>next()</td><br>        <td>读取当前扫描位置的下一个单词（默认以空格作为分隔符）</td><br>    </tr><br>    <tr><br>        <td>String</td><td>nextLine()</td><br>        <td>读取当前扫描位置之后的行内容（默认以回车符作为分隔符）</td><br>    </tr><br>    <tr><br>        <td>int</td><td>nextlnt</td><br>        <td>读取当前扫描位置之后的整数（默认以回车符作为分隔符）</td><br>    </tr><br>    <tr><br>        <td>double</td><td>nextDouble</td><br>        <td>读读取并转换下一个表示整数或浮点数的字符序列</td><br>    </tr><br>    <tr><br>        <td>boolean</td><td>hasNext()</td><br>        <td>判断 Scanner 中当前扫描位置后是否还存在行内容，存在返回true<br>        跟next()搭配</td><br>    </tr><br>    <tr><br>        <td>boolean</td><td>hasNextLine()</td><br>        <td>判断 Scanner 中当前扫描位置后是否还存在内容，存在返回 true<br>        跟nextLine()搭配</td><br>    </tr><br></table>
 
+
+
 <h5 id="next和nextLine"><a href="#next和nextLine" class="headerlink" title="next和nextLine"></a>next和nextLine</h5><h6 id="分别测试"><a href="#分别测试" class="headerlink" title="分别测试"></a>分别测试</h6><p>测试next方式和nextLine方式，输入内容：next 123,asdf  </p>
 <p>next方式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    Scanner sc = <span class="keyword">new</span> Scanner(System.in); </span><br><span class="line">    System.out.println(<span class="string">"请输入字符串："</span>);</span><br><span class="line">    <span class="keyword">while</span>(sc.hasNext())&#123;</span><br><span class="line">    	System.out.println(sc.next());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -626,7 +628,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -637,7 +639,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -648,7 +650,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

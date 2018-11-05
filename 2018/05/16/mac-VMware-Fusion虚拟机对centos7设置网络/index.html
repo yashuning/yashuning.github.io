@@ -87,15 +87,15 @@
 <meta property="og:site_name" content="Yaya&#39;s blog">
 <meta property="og:description" content="虚拟机设置网络模式虚拟机采用NAT模式   设置Centos7的网络配置查看mac中vmnet8的gateway在mac终端中，查看配置文件： 1cat /Library/Preferences/VMware Fusion/vmnet8/nat.conf   查看虚拟机可分配地址在win10中虚拟机的静态ip可以自己直接设置想用的ip，但是在mac的vmware fusion中不可以，vmware">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/NAT模式.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/gateway地址.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/Vmware_ip范围.png">
-<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/centos设置ip.png">
-<meta property="og:updated_time" content="2018-05-24T01:48:25.713Z">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_NAT模式.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_gateway地址.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_Vmware_ip范围.png">
+<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_centos设置ip.png">
+<meta property="og:updated_time" content="2018-11-05T07:08:47.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac - VMware Fusion虚拟机对centos7设置网络">
 <meta name="twitter:description" content="虚拟机设置网络模式虚拟机采用NAT模式   设置Centos7的网络配置查看mac中vmnet8的gateway在mac终端中，查看配置文件： 1cat /Library/Preferences/VMware Fusion/vmnet8/nat.conf   查看虚拟机可分配地址在win10中虚拟机的静态ip可以自己直接设置想用的ip，但是在mac的vmware fusion中不可以，vmware">
-<meta name="twitter:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/NAT模式.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_NAT模式.png">
 
 
 
@@ -391,14 +391,14 @@
       
 
       
-        <h3 id="虚拟机设置网络模式"><a href="#虚拟机设置网络模式" class="headerlink" title="虚拟机设置网络模式"></a>虚拟机设置网络模式</h3><p>虚拟机采用NAT模式<br><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/NAT模式.png" width="453" height="300" alt="NAT模式">  </p>
+        <h3 id="虚拟机设置网络模式"><a href="#虚拟机设置网络模式" class="headerlink" title="虚拟机设置网络模式"></a>虚拟机设置网络模式</h3><p>虚拟机采用NAT模式<br><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_NAT模式.png" width="453" height="300" alt="NAT模式">  </p>
 <h3 id="设置Centos7的网络配置"><a href="#设置Centos7的网络配置" class="headerlink" title="设置Centos7的网络配置"></a>设置Centos7的网络配置</h3><h4 id="查看mac中vmnet8的gateway"><a href="#查看mac中vmnet8的gateway" class="headerlink" title="查看mac中vmnet8的gateway"></a>查看mac中vmnet8的gateway</h4><p>在mac终端中，查看配置文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /Library/Preferences/VMware Fusion/vmnet8/nat.conf</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/gateway地址.png" width="355" height="120" alt="gateway地址"> </p>
+<p><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_gateway地址.png" width="355" height="120" alt="gateway地址"> </p>
 <h4 id="查看虚拟机可分配地址"><a href="#查看虚拟机可分配地址" class="headerlink" title="查看虚拟机可分配地址"></a>查看虚拟机可分配地址</h4><p>在win10中虚拟机的静态ip可以自己直接设置想用的ip，但是在mac的vmware fusion中不可以，vmware fusion会分配一个ip范围让虚拟机使用，你给Centos设置的静态ip必须在这个范围之内  </p>
 <p>进入mac终端查看：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /Library/Preferences/VMware\ Fusion/vmnet8/dhcpd.conf</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/Vmware_ip范围.png" width="461" height="219" alt="Vmware_ip范围"> </p>
+<p><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_Vmware_ip范围.png" width="461" height="219" alt="Vmware_ip范围"> </p>
 <h4 id="修改Centos7的配置文件"><a href="#修改Centos7的配置文件" class="headerlink" title="修改Centos7的配置文件"></a>修改Centos7的配置文件</h4><p>修改文件：/etc/sysconfig/network-scripts/ifcfg-ens33  </p>
 <p>配置参数如下，文件中有的变量则修改值，没有变量就进行添加：</p>
 <ul>
@@ -409,7 +409,7 @@
 <li>ONBOOT=yes</li>
 <li>DNS1=8.8.8.8（可以在mac中查看网络-&gt;高级中的DNS地址）</li>
 </ul>
-<p><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/centos设置ip.png" width="411" height="319" alt="centos设置ip"></p>
+<p><img src="/2018/05/16/mac-VMware-Fusion虚拟机对centos7设置网络/mac_VM_centos设置ip.png" width="411" height="319" alt="centos设置ip"></p>
 <h4 id="重启网卡"><a href="#重启网卡" class="headerlink" title="重启网卡"></a>重启网卡</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>在centos中ping主机和百度<br>在mac主机中ping虚拟机<br>都ping通就说明成功了</p>
 

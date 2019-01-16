@@ -82,17 +82,17 @@
 <meta name="description" content="介绍在Windows下可以使用上传下载工具sz与rz，但是mac下一般都是通过scp命令来完成的在有些时候不能使用scp，比如目前公司登录服务器需要经过跳板机，所以可以使用iTerm安装rz、sz进行上传下载 使用iterm2使用scp命令上传上传文件scp 【本地文件路径】 【服务器用户名】@【服务器ip】：【服务器文件存放路径】 1scp local_folder remote_usernam">
 <meta name="keywords" content="mac,iTerm,sz&#x2F;rz,scp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mac 使用scp或iTerm2+rz、sz上传下载文件">
+<meta property="og:title" content="mac-使用scp或iTerm2+rz、sz上传下载文件">
 <meta property="og:url" content="http://yoursite.com/2018/05/16/mac-使用scp或iTerm2-rz、sz上传下载文件/index.html">
 <meta property="og:site_name" content="Yaya&#39;s blog">
 <meta property="og:description" content="介绍在Windows下可以使用上传下载工具sz与rz，但是mac下一般都是通过scp命令来完成的在有些时候不能使用scp，比如目前公司登录服务器需要经过跳板机，所以可以使用iTerm安装rz、sz进行上传下载 使用iterm2使用scp命令上传上传文件scp 【本地文件路径】 【服务器用户名】@【服务器ip】：【服务器文件存放路径】 1scp local_folder remote_usernam">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/05/16/mac-使用scp或iTerm2-rz、sz上传下载文件/mac_rzsz_iTerm配置.png">
-<meta property="og:updated_time" content="2018-11-05T07:09:25.199Z">
+<meta property="og:image" content="http://pkvv4hyzz.bkt.clouddn.com//image/mac/mac_rzsz_iTerm%E9%85%8D%E7%BD%AE.png">
+<meta property="og:updated_time" content="2019-01-07T09:25:05.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac 使用scp或iTerm2+rz、sz上传下载文件">
+<meta name="twitter:title" content="mac-使用scp或iTerm2+rz、sz上传下载文件">
 <meta name="twitter:description" content="介绍在Windows下可以使用上传下载工具sz与rz，但是mac下一般都是通过scp命令来完成的在有些时候不能使用scp，比如目前公司登录服务器需要经过跳板机，所以可以使用iTerm安装rz、sz进行上传下载 使用iterm2使用scp命令上传上传文件scp 【本地文件路径】 【服务器用户名】@【服务器ip】：【服务器文件存放路径】 1scp local_folder remote_usernam">
-<meta name="twitter:image" content="http://yoursite.com/2018/05/16/mac-使用scp或iTerm2-rz、sz上传下载文件/mac_rzsz_iTerm配置.png">
+<meta name="twitter:image" content="http://pkvv4hyzz.bkt.clouddn.com//image/mac/mac_rzsz_iTerm%E9%85%8D%E7%BD%AE.png">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>mac 使用scp或iTerm2+rz、sz上传下载文件 | Yaya's blog</title>
+  <title>mac-使用scp或iTerm2+rz、sz上传下载文件 | Yaya's blog</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mac 使用scp或iTerm2+rz、sz上传下载文件</h1>
+          <h1 class="post-title" itemprop="name headline">mac-使用scp或iTerm2+rz、sz上传下载文件</h1>
         
 
         <div class="post-meta">
@@ -408,7 +408,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/bin</span><br><span class="line">sudo wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-send-zmodem.sh</span><br><span class="line">sudo wget https://raw.github.com/mmastrac/iterm2-zmodem/master/iterm2-recv-zmodem.sh</span><br></pre></td></tr></table></figure>
 <h5 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h5><p>直接下载脚本，放在/usr/local/bin目录下<br><a href="https://github.com/mmastrac/iterm2-zmodem" target="_blank" rel="noopener">https://github.com/mmastrac/iterm2-zmodem</a>中的两个脚本文件</p>
 <h4 id="给脚本权限"><a href="#给脚本权限" class="headerlink" title="给脚本权限"></a>给脚本权限</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 /usr/<span class="built_in">local</span>/bin/iterm2-*</span><br></pre></td></tr></table></figure>
-<h4 id="配置iTerm2"><a href="#配置iTerm2" class="headerlink" title="配置iTerm2"></a>配置iTerm2</h4><p>如图：<br><img src="/2018/05/16/mac-使用scp或iTerm2-rz、sz上传下载文件/mac_rzsz_iTerm配置.png" alt="iTerm配置"></p>
+<h4 id="配置iTerm2"><a href="#配置iTerm2" class="headerlink" title="配置iTerm2"></a>配置iTerm2</h4><p>如图：<br><img src="http://pkvv4hyzz.bkt.clouddn.com//image/mac/mac_rzsz_iTerm%E9%85%8D%E7%BD%AE.png" alt="mac_rzsz_iTerm配置"></p>
 <table><br>    <tr><br>        <th>Regular Expression</th><br>        <th>Action</th><br>        <th>Parameters</th><br>        <th>Instant</th><br>    </tr><br>    <tr><br>        <td>rz waiting to receive.**B0100</td><br>        <td>Run Silent Coprocess</td><br>        <td>/usr/local/bin/iterm2-send-zmodem.sh</td><br>        <td>选中</td><br>    </tr><br>    <tr><br>        <td>**B00000000000000</td><br>        <td>Run Silent Coprocess</td><br>        <td>/usr/local/bin/iterm2-recv-zmodem.sh</td><br>        <td>选中</td><br>    </tr><br></table>
 
 <h3 id="服务器安装lrzsz工具"><a href="#服务器安装lrzsz工具" class="headerlink" title="服务器安装lrzsz工具"></a>服务器安装lrzsz工具</h3><h3 id="使用rz、sz"><a href="#使用rz、sz" class="headerlink" title="使用rz、sz"></a>使用rz、sz</h3><p>在服务器上，<br>输入命令rz,出现选择本地文件窗口，选择文件后开始上传  </p>
@@ -540,7 +540,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -562,7 +562,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -615,7 +615,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
